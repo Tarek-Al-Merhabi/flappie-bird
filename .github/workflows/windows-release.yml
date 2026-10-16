@@ -1,0 +1,41 @@
+name: Build Windows game
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Check out the release
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Test the desktop game
+        run: pnpm run test:desktop
+
+      - name: Build the portable Windows game
+        run: pnpm run build:windows
+
+      - name: Attach the game to the GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/*.exe
