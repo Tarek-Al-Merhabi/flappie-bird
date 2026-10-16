@@ -4,7 +4,7 @@ A tiny, friendly, flap-and-dodge arcade game. Tap, click, or press **Space** to 
 
 ## Play
 
-Open `index.html` in a modern browser, or publish this folder with GitHub Pages. No build step, framework, server, or downloaded assets are required.
+Play online at [tarek-al-merhabi.github.io/flappie-bird](https://tarek-al-merhabi.github.io/flappie-bird/), or open `index.html` in a modern browser. No build step, framework, server, or downloaded assets are required.
 
 ## Controls
 
