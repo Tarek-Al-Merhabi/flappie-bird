@@ -1,0 +1,45 @@
+{
+  "name": "flappie-bird",
+  "version": "1.0.0",
+  "description": "A friendly little flap-and-dodge arcade game",
+  "main": "desktop/main.cjs",
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "start": "electron .",
+    "test:desktop": "electron desktop/smoke-test.cjs",
+    "build:windows": "electron-builder --win portable --x64"
+  },
+  "devDependencies": {
+    "electron": "44.8.0",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "com.tarek.flappiebird",
+    "productName": "Flappie Bird",
+    "asar": true,
+    "files": [
+      "index.html",
+      "style.css",
+      "desktop.css",
+      "desktop-mode.js",
+      "game.js",
+      "favicon.svg",
+      "desktop/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "artifactName": "Flappie-Bird-${version}-Windows-${arch}.${ext}"
+    },
+    "portable": {
+      "requestExecutionLevel": "user"
+    }
+  }
+}

@@ -6,6 +6,10 @@ A tiny, friendly, flap-and-dodge arcade game. Tap, click, or press **Space** to 
 
 Play online at [tarek-al-merhabi.github.io/flappie-bird](https://tarek-al-merhabi.github.io/flappie-bird/), or open `index.html` in a modern browser. No build step, framework, server, or downloaded assets are required.
 
+## Download the Windows game
+
+Download **Flappie-Bird-1.0.0-Windows-x64.exe** from [the latest GitHub Release](https://github.com/Tarek-Al-Merhabi/flappie-bird/releases/latest). It is a portable Windows app: save the `.exe` and open it to play; no installer or internet connection is needed.
+
 ## Controls
 
 - **Space**, **↑**, click, or tap: flap
@@ -30,3 +34,13 @@ GitHub Pages will publish the game at the address shown in the Pages settings.
 - `style.css` — responsive layout and styling
 - `game.js` — drawing, physics, scoring, sound, and input
 - `favicon.svg` — small Flappie mark
+- `desktop/main.cjs` — secure Electron desktop window
+- `desktop.css` and `desktop-mode.js` — game-only desktop layout
+
+## Build the Windows app from source
+
+1. Install Node.js.
+2. Run `npm install`.
+3. Run `npm run build:windows`.
+
+The portable app is created in the `release` folder.
