@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f4e9">
+    <meta name="description" content="Meet Flappie: one little bird, a big open sky, and one more try. A free, friendly flap-and-dodge arcade game.">
+    <title>Flappie Bird — A little bird, a big sky</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#home" aria-label="Flappie Bird home">
+          <span class="brand-mark" aria-hidden="true">f</span>
+          <span class="brand-name">flappie<span>bird</span></span>
+        </a>
+        <div class="top-actions">
+          <div class="best-chip" aria-label="Personal best">
+            <span class="best-chip-icon" aria-hidden="true">✦</span>
+            <span class="best-chip-label">BEST</span>
+            <span class="best-value" id="best-value">0</span>
+          </div>
+          <button class="icon-button sound-button" id="sound-button" type="button" aria-label="Turn sound off" aria-pressed="true" title="Turn sound off (M)">
+            <svg class="sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m2-9a8 8 0 0 1 0 12"/></svg>
+            <svg class="sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Zm5 4 5 6m0-6-5 6"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <main id="home">
+        <section class="intro" aria-labelledby="page-title">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEW FAVORITE DISTRACTION</div>
+          <h1 id="page-title">A little bird.<br><span>A big <em>sky.</em></span></h1>
+          <p class="intro-copy">Meet Flappie. Keep those wings moving, dodge the pipes, and see how far you can fly.</p>
+        </section>
+
+        <section class="game-section" aria-label="Flappie Bird game">
+          <div class="game-column">
+            <div class="game-topline">
+              <div class="game-label"><span class="live-dot" aria-hidden="true"></span> SKY PATROL <span class="label-divider">/</span> <span class="label-sub">ENDLESS RUN</span></div>
+              <button class="icon-button pause-button" id="pause-button" type="button" aria-label="Pause game" title="Pause (P)" disabled>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg>
+              </button>
+            </div>
+            <div class="game-frame" id="game-frame">
+              <canvas id="game-canvas" width="480" height="720" aria-label="Flappie Bird game. Tap, click, or press Space to flap past the pipes." role="application"></canvas>
+              <div class="score-display" id="score-display" aria-live="polite" aria-atomic="true">0</div>
+              <div class="game-overlay" id="game-overlay">
+                <div class="overlay-card" id="overlay-card">
+                  <span class="overlay-sparkle" aria-hidden="true">✳</span>
+                  <p class="overlay-kicker" id="overlay-kicker">READY WHEN YOU ARE</p>
+                  <h2 id="overlay-title">Let's fly,<br>little bird.</h2>
+                  <p class="overlay-copy" id="overlay-copy">Tap the sky and flap your way through.</p>
+                  <button class="play-button" id="play-button" type="button"><span id="play-button-label">LET'S GO</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+                </div>
+              </div>
+              <span class="canvas-coord" aria-hidden="true">SKY FIELD · 01</span>
+            </div>
+            <div class="below-game">
+              <div class="score-note"><span class="note-sparkle" aria-hidden="true">✦</span> <span id="score-note-text">Easy does it. One flap at a time.</span></div>
+              <div class="control-hint"><kbd>SPACE</kbd><span>or tap to flap</span></div>
+            </div>
+          </div>
+
+          <aside class="side-notes" aria-label="Game tips">
+            <article class="note-card mission-card">
+              <div class="note-card-top"><span class="note-icon sun-icon" aria-hidden="true">☀</span><span class="card-index">NO. 01</span></div>
+              <h2>Today's mission</h2>
+              <p>Find your rhythm. Slip through the pipes. Try not to ruffle your feathers.</p>
+              <div class="mission-stamp" aria-hidden="true"><span>FLY</span><span>FREE</span></div>
+            </article>
+            <article class="note-card tips-card">
+              <div class="note-card-top"><span class="note-icon tips-icon" aria-hidden="true">↗</span><span class="card-index">FIELD NOTES</span></div>
+              <h2>A little tip</h2>
+              <p>Short, steady flaps beat frantic tapping. The gaps are wider than they look.</p>
+              <div class="tip-rule"><span></span><span></span><span></span></div>
+            </article>
+            <p class="offline-note"><span aria-hidden="true">♥</span> Made for your next five minutes.</p>
+          </aside>
+        </section>
+
+        <footer class="page-footer">
+          <span class="footer-flower" aria-hidden="true">✳</span>
+          <span>A tiny arcade game for the open sky.</span>
+          <span class="footer-right">NO DOWNLOADS. JUST WINGS.</span>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
